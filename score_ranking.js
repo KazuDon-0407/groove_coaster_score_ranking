@@ -1,12 +1,13 @@
 javascript:(function(){
     const href=location.href;
-    var match=href.match("https://mypage.groovecoaster.jp/sp/#/mc/");
+    var match=href.match("https://mypage.groovecoaster.jp/sp/#/se_rg/");
     if(match==null){
-        alert("%E3%83%AA%E3%82%B6%E3%83%AB%E3%83%88%E7%94%BB%E9%9D%A2%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84");
+        alert("%E3%82%B9%E3%82%B3%E3%82%A2%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E7%94%BB%E9%9D%A2%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84");
     }
     else{
-        const music_id=href.replace(/[^0-9]/g,'');
-        var difficulty=0;
+        const key=href.replace(/[^0-9]/g,'');
+        const music_id=Math.floor(key/10);
+        const difficulty=key-music_id*10;
         var page=0;
         var xmlHttp=new XMLHttpRequest();
         xmlHttp.open("GET","https://mypage.groovecoaster.jp/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty="+difficulty+"&page="+page,false);
