@@ -11,6 +11,7 @@ javascript:(function(){
         xmlHttp.send(null);
         var data=JSON.parse(xmlHttp.responseText);
         console.log(data);
+        if(data.count>0) alert("OK");
         /*
         console.log(data.music_detail);
         const path=[data.music_detail.simple_result_data,data.music_detail.normal_result_data,data.music_detail.hard_result_data,data.music_detail.extra_result_data];
