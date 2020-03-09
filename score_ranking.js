@@ -2,7 +2,7 @@ javascript:(function(){
     const href=location.href;
     var match=href.match("https://mypage.groovecoaster.jp/sp/#/se_rg/");
     if(match==null){
-        alert("%E3%82%B9%E3%82%B3%E3%82%A2%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0%E7%94%BB%E9%9D%A2%E3%81%A7%E5%AE%9F%E8%A1%8C%E3%81%97%E3%81%A6%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84");
+        alert("スコアランキング画面で実行してください");
     }
     else{
         const key=href.replace(/[^0-9]/g,'');
