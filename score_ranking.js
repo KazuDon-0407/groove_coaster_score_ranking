@@ -16,7 +16,7 @@ javascript:(function(){
         var flag=0;
         
         var date=new Date();
-        var now=date.getFullYear()+"年"+("0"+(date.getMonth()+1)).slice(-2)+"月"+date.getDate()+"日";
+        var now=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日";
         alert(now);       
         xmlHttp.open("GET",host+"/sp/json/music_detail.php?music_id="+music_id,false);
         xmlHttp.send(null);
