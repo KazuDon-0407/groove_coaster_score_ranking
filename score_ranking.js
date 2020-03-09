@@ -8,15 +8,23 @@ javascript:(function(){
         const key=href.replace(/[^0-9]/g,'');
         const music_id=Math.floor(key/10);
         const difficulty=key-music_id*10;
+        const ide_score=1000000;
         var page=0;
-        var xmlHttp=new XMLHttpRequest();
-        xmlHttp.open("GET","https://mypage.groovecoaster.jp/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty="+difficulty+"&page="+page,false);
-        xmlHttp.send(null);
-        var data=JSON.parse(xmlHttp.responseText);
-        console.log(data);
-        console.log(data.score_rank[0]);
-        var ary_len=data.score_rank.length;
-        console.log(data.score_rank[ary_len-1]);
+        var flag=0;
+        while(!flag&&page<30){
+            var xmlHttp=new XMLHttpRequest();
+            xmlHttp.open("GET","https://mypage.groovecoaster.jp/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty="+difficulty+"&page="+page,false);
+            xmlHttp.send(null);
+            var data=JSON.parse(xmlHttp.responseText);
+            console.log(data);
+            var ary_len=data.score_rank.length;
+            if(data.score_rank[ary_len-1].event_point<ide_score){
+                flag=1;
+                break;
+            }
+            page++;
+        }
+        console.log(page);
         /*
         console.log(data.music_detail);
         const path=[data.music_detail.simple_result_data,data.music_detail.normal_result_data,data.music_detail.hard_result_data,data.music_detail.extra_result_data];
