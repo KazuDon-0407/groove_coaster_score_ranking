@@ -29,7 +29,7 @@ javascript:(function(){
             if(data.score_rank[i].event_point<ide_score) break;
         }
         var ide_num=page*100+i;
-        alert("理論値人数:"+num+"人");
+        alert("理論値人数:"+ide_num+"人");
         /*
         console.log(data.music_detail);
         const path=[data.music_detail.simple_result_data,data.music_detail.normal_result_data,data.music_detail.hard_result_data,data.music_detail.extra_result_data];
