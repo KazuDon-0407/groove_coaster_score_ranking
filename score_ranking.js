@@ -6,8 +6,10 @@ javascript:(function(){
     }
     else{
         const music_id=href.replace(/[^0-9]/g,'');
+        var difficulty=0;
+        var page=0;
         var xmlHttp=new XMLHttpRequest();
-        xmlHttp.open("GET","https://mypage.groovecoaster.jp/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty=2&page=1",false);
+        xmlHttp.open("GET","https://mypage.groovecoaster.jp/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty="+difficulty+"&page="+page,false);
         xmlHttp.send(null);
         var data=JSON.parse(xmlHttp.responseText);
         console.log(data);
