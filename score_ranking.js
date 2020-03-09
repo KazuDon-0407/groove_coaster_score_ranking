@@ -15,6 +15,9 @@ javascript:(function(){
         var page=0;
         var flag=0;
         
+        var date=new Date();
+        var now=date.getFullYear()+""+("0"+(date.getMonth()+1)).slice(-2);
+        alert(now);       
         xmlHttp.open("GET",host+"/sp/json/music_detail.php?music_id="+music_id,false);
         xmlHttp.send(null);
         var data=JSON.parse(xmlHttp.responseText);
