@@ -24,7 +24,12 @@ javascript:(function(){
             }
             page++;
         }
+        var i;
+        for(i=0;i<ary_len-1;i++){
+            if(data.score_rank[i].event_point<ide_score) break;
+        }
         console.log(page);
+        console.log(i);
         /*
         console.log(data.music_detail);
         const path=[data.music_detail.simple_result_data,data.music_detail.normal_result_data,data.music_detail.hard_result_data,data.music_detail.extra_result_data];
