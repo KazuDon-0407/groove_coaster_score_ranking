@@ -10,6 +10,7 @@ javascript:(function(){
         xmlHttp.open("GET","https://mypage.groovecoaster.jp/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty=2&page=1",false);
         xmlHttp.send(null);
         var data=JSON.parse(xmlHttp.responseText);
+        console.log(data);
         /*
         console.log(data.music_detail);
         const path=[data.music_detail.simple_result_data,data.music_detail.normal_result_data,data.music_detail.hard_result_data,data.music_detail.extra_result_data];
