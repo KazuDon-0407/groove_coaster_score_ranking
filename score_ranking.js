@@ -17,7 +17,7 @@ javascript:(function(){
         
         var date=new Date();
         var now=date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日";
-        alert(now);       
+        
         xmlHttp.open("GET",host+"/sp/json/music_detail.php?music_id="+music_id,false);
         xmlHttp.send(null);
         var data=JSON.parse(xmlHttp.responseText);
@@ -43,6 +43,6 @@ javascript:(function(){
         }
         var ide_num=page*100+i;
         var sum=data.count;
-        alert(music_title+difficulty[d_idx]+"の理論値人数\n"+sum+"人中"+ide_num+"人");
+        alert(now+"時点での\n"+music_title+difficulty[d_idx]+"の理論値人数\n"+sum+"人中"+ide_num+"人");
     }
 })();
