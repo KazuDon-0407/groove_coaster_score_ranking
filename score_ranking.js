@@ -25,7 +25,7 @@ javascript:(function(){
             xmlHttp.open("GET",host+"/sp/json/score_ranking_bymusic_bydifficulty.php?music_id="+music_id+"&difficulty="+d_idx+"&page="+page,false);
             xmlHttp.send(null);
             var data=JSON.parse(xmlHttp.responseText);
-            console.log(data);
+            //console.log(data);
             var ary_len=data.score_rank.length;
             if(data.score_rank[ary_len-1].event_point<ide_score){
                 flag=1;
